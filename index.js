@@ -6,13 +6,19 @@ function increment() {
   point.textContent = count;
 }
 function decrement() {
-  count = count - 1;
-  point.textContent = count;
-}
+
+  if (count>0){
+    count = count - 1;
+    point.textContent = count;
+  }
+  else{
+    count=0;
+  }
+} 
 
 function save() {
   let track;
-  track = `${count} `;
+  track = `${count} ,`;
   hist.textContent = hist.textContent + track;
   console.log(track);
   count = 0;
